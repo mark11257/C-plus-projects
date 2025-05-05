@@ -39,6 +39,7 @@ int main(){
     }else
     {
         cout<<"Please enter a valid operation next time";
+        return -1;
     }
     
     cout<<"The result is: "<<result;
