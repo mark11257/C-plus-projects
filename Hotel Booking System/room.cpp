@@ -9,9 +9,9 @@ private:
     string type;
 public:
      Room(int number,double price,string type){
-        this->number = number;
-        this->price = price;
-        this->type = type;
+        setRoomNumber(number);
+        setRoomPrice(price);
+        setRoomType(type);
         this->Booked = false;
     }
     void  setRoomNumber(int number){
@@ -48,6 +48,7 @@ public:
         cout << "Room number: " << this->number << "\n"
         << "Room type: " << this->type << "\n"
         << "Room price: " << this->price << "$\n"
-        << "Room status: " << (this->Booked ? "Booked" : "Available");
+        << "Room status: " << (this->Booked ? "Booked" : "Available\n")
+        <<endl;
     }
 };

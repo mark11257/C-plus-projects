@@ -14,10 +14,38 @@ public:
         cout<<"Room "<<room.getRoomNumber()<<" Added succesfully\n";
     }
     void displayRooms() {
-    for (Room room : rooms) {
-        room.displayRoom();
-        cout << "\n";
+        for(Room& room : rooms){
+            room.displayRoom();
         }
     }
+
+    void searchRoom(int number){
+        bool foundRoom=false;
+        for(Room& room:rooms){
+            if(number == room.getRoomNumber()){
+                room.displayRoom();
+                foundRoom=true;
+                break;
+            }
+        }
+        if(!foundRoom)
+            cout<<"Room Requested is not Listed\n";
+    }
+
+    bool bookRoom(int number){
+        bool bookedRoom=false;
+        for(Room& room:rooms){
+            if(number == room.getRoomNumber() && !room.isBooked()){
+                room.BookRoom();
+                bookedRoom=true;
+                break;
+            }
+        }
+        if(!bookedRoom)
+            cout<<"Could not book the room, Either room is already booked or not found\n";
+        return bookedRoom;
+    }
+   
+    
     
 };

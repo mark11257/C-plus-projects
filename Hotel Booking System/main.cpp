@@ -4,7 +4,13 @@ using namespace std;
 int main(){
    Hotel hotel;
    hotel.addRoom(5,500,"single");
-   hotel.displayRooms();
+   hotel.addRoom(2,1000,"double");
+   hotel.addRoom(7,100,"megamax");
+   hotel.addRoom(1,1,"single");
+   //hotel.displayRooms();
+   hotel.searchRoom(7);
+   hotel.bookRoom(7);
+    hotel.searchRoom(7);
     return 0;
 }
 
